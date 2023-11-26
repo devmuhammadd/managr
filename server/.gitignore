@@ -1,0 +1,10 @@
+venv/
+graveyard/
+*.pyc
+*.DS_Store
+.env
+__pycache__
+.tool-versions
+logfile
+.mypy_cache
+managr-env
