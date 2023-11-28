@@ -1,10 +1,10 @@
-# Volunteer Fire Brigade Administration Software - Frontend (Next.js)
+# Managr - Frontend (Next.js)
 
-Welcome to the frontend section of the Volunteer Fire Brigade Administration Software! This section of the project focuses on the user interface and interaction, built using Next.js.
+Welcome to the frontend section of the Managr! This section of the project focuses on the user interface and interaction, built using Next.js.
 
 ## Project Overview
 
-The frontend is designed to provide an intuitive and user-friendly interface for managing tickets and user interactions within the volunteer fire brigade administration system.
+The frontend is designed to provide an intuitive and user-friendly interface for user interactions within the managr.
 
 ## Running the Project
 
