@@ -4,25 +4,25 @@ import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
-import CardStatisticsSquare from 'src/views/pages/dms/CardStatisticsSquare'
+import CardStatisticsSquare from 'src/views/pages/home/CardStatisticsSquare'
 
 const Home = () => {
   const stats = [
     {
       stats: '19',
-      title: 'Opened Tickets',
+      title: 'Opened Orders',
       avatarColor: 'primary',
       icon: 'ph:ticket'
     },
     {
       stats: '12',
-      title: 'In-progress Tickets',
+      title: 'In-progress Orders',
       avatarColor: 'error',
       icon: 'lets-icons:time-progress-fill'
     },
     {
       stats: '65',
-      title: 'Completed Tickets',
+      title: 'Completed Orders',
       avatarColor: 'success',
       icon: 'carbon:task-complete'
     }
