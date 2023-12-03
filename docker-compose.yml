@@ -15,7 +15,7 @@ services:
     build: ./server
     command: bash -c "alembic upgrade head && uvicorn main:app --host 0.0.0.0 --port 8000 --reload"
     volumes:
-      - ./client:/app/client
+      - ./server:/app/server
     ports:
       - 8000:8000
     environment:
