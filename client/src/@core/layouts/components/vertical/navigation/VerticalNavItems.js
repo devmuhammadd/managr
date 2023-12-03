@@ -19,7 +19,8 @@ const VerticalNavItems = props => {
 
     return <TagName {...props} key={index} item={item} />
   })
-  return <>{RenderMenuItems}</>
+  
+return <>{RenderMenuItems}</>
 }
 
 export default VerticalNavItems
