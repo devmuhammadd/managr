@@ -4,7 +4,7 @@ import applyCaseMiddleware from 'axios-case-converter';
 const getToken = () => window.localStorage.getItem('accessToken');
 
 const axiosInstance = applyCaseMiddleware(axios.create({
-    baseURL: process.env.NEXT_PUBLIC_BACKEND_URL || "",
+    baseURL: process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000",
 }));
 
 axiosInstance.interceptors.request.use((config) => {
@@ -12,7 +12,8 @@ axiosInstance.interceptors.request.use((config) => {
     if (accessToken) {
         config.headers.Authorization = accessToken;
     }
-    return config;
+
+return config;
 });
 
 export default axiosInstance;
