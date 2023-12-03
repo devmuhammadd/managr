@@ -26,7 +26,6 @@ services:
     depends_on:
       - db
     networks:
-
       - app-network
 
   db:
