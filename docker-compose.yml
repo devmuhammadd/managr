@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  cliennt:
+  client:
     build: ./client
     command: sh -c "npm install && npm run build && npm start"
     volumes:
@@ -26,6 +26,7 @@ services:
     depends_on:
       - db
     networks:
+
       - app-network
 
   db:
