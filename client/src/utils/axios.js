@@ -1,19 +1,25 @@
-import axios from "axios";
-import applyCaseMiddleware from 'axios-case-converter';
+import axios from 'axios'
+/* eslint-disable no-undef */
 
-const getToken = () => window.localStorage.getItem('accessToken');
+import applyCaseMiddleware from 'axios-case-converter'
 
-const axiosInstance = applyCaseMiddleware(axios.create({
-    baseURL: process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000",
-}));
+const getToken = () => window.localStorage.getItem('accessToken')
 
-axiosInstance.interceptors.request.use((config) => {
-    const accessToken = getToken();
-    if (accessToken) {
-        config.headers.Authorization = accessToken;
-    }
+const backendUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : 'http://managr.telebox.it:8000'
 
-return config;
-});
+const axiosInstance = applyCaseMiddleware(
+  axios.create({
+    baseURL: backendUrl
+  })
+)
 
-export default axiosInstance;
+axiosInstance.interceptors.request.use(config => {
+  const accessToken = getToken()
+  if (accessToken) {
+    config.headers.Authorization = accessToken
+  }
+
+  return config
+})
+
+export default axiosInstance

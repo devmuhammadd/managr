@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  client:
+    build: ./client
+    command: sh -c "npm install && npm run build && npm run dev"
+    volumes:
+      - ./client:/app/client
+    ports:
+      - 3000:3000
+    networks:
+      - app-network
+
+  server:
+    build: ./server
+    command: bash -c "alembic upgrade head && uvicorn main:app --host 0.0.0.0 --port 8000 --reload"
+    volumes:
+      - ./server:/app/server
+    ports:
+      - 8000:8000
+    environment:
+      - DATABASE_URL=postgresql://dev_user:dev123@db:5432/managr
+      - SECRET_KEY=9bf9689491c2e3250f78c3039153f53eec0240be5d9e8af072172c5e5b3d8f85
+      - ALGORITHM=HS256
+      - ACCESS_TOKEN_EXPIRE_MINUTES=30
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+  db:
+    image: postgres:15-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=dev_user
+      - POSTGRES_PASSWORD=dev123
+      - POSTGRES_DB=managr
+    networks:
+      - app-network
+
+volumes:
+  postgres_data:
+
+networks:
+  app-network:
