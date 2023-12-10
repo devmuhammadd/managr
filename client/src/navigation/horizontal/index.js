@@ -1,21 +1,16 @@
-const navigation = () => [
-  {
-    title: 'Home',
-    path: '/home',
-    icon: 'tabler:smart-home',
-  },
-  {
-    title: 'Second Page',
-    path: '/second-page',
-    icon: 'tabler:mail',
-  },
-  {
-    path: '/acl',
-    action: 'read',
-    subject: 'acl-page',
-    title: 'Access Control',
-    icon: 'tabler:shield',
-  }
-]
+const navigation = () => {
+  return [
+    {
+      title: 'Home',
+      path: '/home',
+      icon: 'uil:setting',
+    },
+    {
+      title: 'Administration',
+      path: '/',
+      icon: 'eos-icons:admin-outlined',
+    }
+  ]
+}
 
 export default navigation
