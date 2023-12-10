@@ -96,12 +96,12 @@ const App = props => {
 
     <CacheProvider value={emotionCache}>
       <Head>
-        <title>{`${themeConfig.templateName} - Defekte Management System`}</title>
+        <title>{`${themeConfig.templateName}`}</title>
         <meta
           name='description'
-          content={`${themeConfig.templateName} – Defekte Management System`}
+          content={`${themeConfig.templateName}`}
         />
-        <meta name='keywords' content='Defekte, Management, System' />
+        <meta name='keywords' content='Management, System' />
         <meta name='viewport' content='initial-scale=1, width=device-width' />
       </Head>
 

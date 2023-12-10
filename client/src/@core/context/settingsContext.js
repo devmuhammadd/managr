@@ -23,6 +23,7 @@ const initialSettings = {
 
 const staticSettings = {
   appBar: initialSettings.appBar,
+  mode: initialSettings.mode,
   footer: initialSettings.footer,
   layout: initialSettings.layout,
   navHidden: initialSettings.navHidden,
